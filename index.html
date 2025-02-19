@@ -6,6 +6,25 @@
         body {
             font-family: 'Dancing Script', cursive;
         }
+		/* Hide all images by default */
+.slide {
+    display: none;
+}
+
+/* Show the first image */
+.slide:first-child {
+    display: block;
+}
+
+/* Add fade animation */
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,10 +44,23 @@
     <div class="pt-16"> <!-- Offset for fixed nav -->
         <!-- Homepage -->
         <section id="home" class="text-center p-10">
-            <h1 class="text-4xl font-bold">Mr & Mrs Rosberg! 🎉</h1>
+            <h1 class="text-4xl font-bold">Henrik & Ellens Bröllop! 🎉</h1>
             <p class="mt-4 text-lg">Join us on <strong>August 23, 2025</strong> for a celebration of love and fun!</p>
-            <div class="mt-6 text-2xl font-semibold" id="countdown"></div>
-<a href="https://forms.gle/TWt6VUh8Kvp1bPc9A" target="_blank">
+            
+	    <!-- Slideshow Container -->
+    <div class="relative w-full max-w-3xl mx-auto">
+        <div class="slideshow">
+            <img src="selfie2.jpg" class="slide fade w-full">
+            <img src="bakgrund.jpg" class="slide fade w-full">
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2" onclick="changeSlide(-1)">❮</button>
+        <button class="next absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2" onclick="changeSlide(1)">❯</button>
+    </div>
+
+<div class="mt-6 text-2xl font-semibold" id="countdown"></div>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLScFnDVhzGrYM8oAbS7Bu2I8IdpYnREhyfy0zrO3EpPIxzB8Nw/viewform?usp=sharing" target="_blank">
     <button class="mt-6 bg-pink-600 text-white px-6 py-2 rounded">RSVP Now</button>
 </a>
 
@@ -48,8 +80,8 @@
 <section id="direction" class="p-10 text-center bg-gray-100">
     <h2 class="text-3xl font-bold">Find Us Here</h2>
 <div class="flex justify-center">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d86508.17119500462!2d13.148566639718126!3d55.766556366800046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x4653940587b69819%3A0x4918e3335996d1be!2sV%C3%A4stra%20Sallerups%20kyrka%2C%20V%C3%A4stra%20Sallerups%20Byav%C3%A4g%2015%2C%20241%2036%20Esl%C3%B6v!3m2!1d55.829739499999995!2d13.2773174!4m5!1s0x465396e452ed7789%3A0xd32b433cff8a4968!2sLunds%20Akademiska%20GK%2C%20Kungsmarken%2C%20Lund!3m2!1d55.7127093!2d13.2758076!5e1!3m2!1ssv!2sse!4v1739304834649!5m2!1ssv!2sse" 
-                class="w-full md:w-2/3 h-96 mt-4" 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d86508.17119500462!2d13.148566639718126!3d55.766556366800046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x4653940587b69819%3A0x4918e3335996d1be!2sV%C3%A4stra%20Sallerups%20kyrka%2C%20V%C3%A4stra%20Sallerups%20Byav%C3%A4g%2015%2C%20241%2036%20Esl%C3%B6v!3m2!1d55.829739499999995!2d13.2773174!4m5!1s0x465396e452ed7789%3A0xd32b433cff8a4968!2sLunds%20Akademiska%20GK%2C%20Kungsmarken%2C%20Lund!3m2!1d55.7127093!2d13.2758076!5e1!3m2!1ssv!2sse!4v1739304834649!5m2!1ssv!2sse"                
+		class="w-full md:w-2/3 h-96 mt-4" 
                 style="border:0;" 
                 allowfullscreen="" 
                 loading="lazy">
@@ -57,7 +89,14 @@
 </div>
 </section>
 
-
+	<!-- Upload photos -->
+	<section id="photo-album" class="text-center p-10 bg-white">
+    <h2 class="text-3xl font-bold">📸 Upload Your Wedding Photos</h2>
+    <p class="mt-4 text-lg">Click below to upload your pictures.</p>
+    <a href="https://drive.google.com/drive/folders/1G_9zCScTkr069P5wEEP1-oinQWEcY_Ip?usp=sharing" class="mt-6 bg-pink-500 text-white px-6 py-2 rounded inline-block">
+        Upload Now 📤
+    </a>
+</section>
 
         <!-- FAQs -->
         <h2 class="text-3xl font-bold text-center mt-10">FAQs</h2>
@@ -84,5 +123,31 @@
         }
         setInterval(updateCountdown, 1000);
     </script>
+<script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"; // Hide all slides
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; } // Loop back to first slide
+        slides[slideIndex - 1].style.display = "block"; // Show the current slide
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    function changeSlide(n) {
+        slideIndex += n - 1;
+        if (slideIndex < 0) { slideIndex = slides.length - 1; }
+        if (slideIndex >= slides.length) { slideIndex = 0; }
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"; // Hide all slides
+        }
+        slides[slideIndex].style.display = "block"; // Show new slide
+    }
+
+    document.addEventListener("DOMContentLoaded", showSlides);
+</script>
 </body>
 </html>
