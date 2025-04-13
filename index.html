@@ -1,153 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Dancing Script', cursive;
+        html {
+            scroll-behavior: smooth;
         }
-		/* Hide all images by default */
-.slide {
-    display: none;
-}
 
-/* Show the first image */
-.slide:first-child {
-    display: block;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+	.slide {
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
-/* Add fade animation */
-.fade {
-    animation: fadeEffect 1.5s ease-in-out;
-}
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
 
-@keyframes fadeEffect {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
+        .slideshow-wrapper {
+            position: relative;
+            height: 24rem;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .slide:first-child {
+            display: block;
+        }
+
+        .fade {
+            animation: fadeEffect 1.5s ease-in-out;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Wedding</title>
+    <title>Henrik & Ellen's Wedding</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-blue-100 text-gray-800">
+<body class="bg-green-900 text-white">
     <!-- Navigation -->
-<nav class="bg-blue-500 text-white p-4 text-center fixed w-full top-0">
-    ✈️ <span class="font-bold">Boarding Pass:</span> 
-    <a href="#home" class="px-4">Home</a> | 
-    <a href="#details" class="px-4">Itinerary</a> | 
-    <a href="#direction" class="px-4">Destination</a> | 
-    <a href="#faqs" class="px-4">Travel Info</a>
-</nav>
+    <nav class="bg-green-900 text-white p-4 text-center fixed w-full top-0 z-50">
+        <a href="#home" class="px-4">Home</a>
+        <a href="#details" class="px-4">Schedule</a>
+        <a href="#dresscode" class="px-4">Dress Code</a>
+	<a href="#gifts" class="px-4">Gåvor</a>
+        <a href="#direction" class="px-4">Location</a>
+        <a href="#faqs" class="px-4">FAQs</a>
+ 	<button onclick="toggleLanguage()" class="px-4 underline">SE / ENG</button>
+    </nav>
 
-    <div class="pt-16"> <!-- Offset for fixed nav -->
+    <div class="pt-20">
         <!-- Homepage -->
-        <section id="home" class="text-center p-10">
-            <h1 class="text-4xl font-bold">Henrik & Ellens Bröllop! 🎉</h1>
-            <p class="mt-4 text-lg">Join us on <strong>August 23, 2025</strong> for a celebration of love and fun!</p>
-            
-	    <!-- Slideshow Container -->
-    <div class="relative w-full max-w-3xl mx-auto">
-        <div class="slideshow">
-            <img src="selfie2.jpg" class="slide fade w-full">
-            <img src="bakgrund.jpg" class="slide fade w-full">
-        </div>
+        <section id="home" class="text-center p-10 scroll-mt-20">
+            <h1 class="text-5xl font-bold mb-4">
+	    <span class="lang-sv">Henrik & Ellens Bröllop</span>
+	    <span class="lang-en hidden">Henrik & Ellen's Wedding</span>
+	    </h1>
 
-        <!-- Navigation Buttons -->
-        <button class="prev absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2" onclick="changeSlide(-1)">❮</button>
-        <button class="next absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-2" onclick="changeSlide(1)">❯</button>
-    </div>
+             <p class="text-xl mb-6">
+    		<span class="lang-sv">Välkommen att fira vår stora dag den <strong>23 augusti 2025</strong>!</span>
+    		<span class="lang-en hidden">Join us on <strong>August 23, 2025</strong> to celebrate our big day!</span>
+ 	     </p>
 
-<div class="mt-6 text-2xl font-semibold" id="countdown"></div>
-<a href="https://docs.google.com/forms/d/e/1FAIpQLScFnDVhzGrYM8oAbS7Bu2I8IdpYnREhyfy0zrO3EpPIxzB8Nw/viewform?usp=sharing" target="_blank">
-    <button class="mt-6 bg-pink-600 text-white px-6 py-2 rounded">RSVP Now</button>
-</a>
+            <!-- Slideshow Container -->
+            <div class="w-full max-w-3xl mx-auto overflow-hidden">
+                <div class="h-64 md:h-96 relative">
+                    <div class="slideshow-wrapper">
+                        <img src="image1.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image2.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image3.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image4.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image5.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image6.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image7.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image8.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image9.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image10.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image11.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image12.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image13.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image14.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image15.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image16.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image17.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image18.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image19.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image20.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image21.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image22.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                        <img src="image23.jpg" class="slide w-full h-full object-contain absolute top-0 left-0">
+                    </div>
+                </div>
+            </div>
 
-        </section>
+  <!-- Countdown -->
+  <div class="mt-6 text-2xl font-semibold" id="countdown"></div>
+
+  <!-- RSVP Button -->
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScFnDVhzGrYM8oAbS7Bu2I8IdpYnREhyfy0zrO3EpPIxzB8Nw/viewform?usp=sharing" target="_blank">
+    <button class="mt-6 bg-yellow-600 text-white px-6 py-2 rounded">
+      <span class="lang-sv">OSA här</span>
+      <span class="lang-en hidden">RSVP here</span>
+    </button>
+  </a>
 
         <!-- Details -->
-        <h2 class="text-3xl font-bold text-center mt-10">Wedding Schedule</h2>
-        <section id="details" class="p-10 bg-white text-center">
-            <ul class="mt-4 space-y-2">
-                <li>📍 Ceremony - 3:00 PM</li>
-                <li>🍽️ Dinner - 5:00 PM</li>
-                <li>🎉 Party - 7:00 PM</li>
-            </ul>
+        <section id="details" class="p-10 scroll-mt-20">
+              <h2 class="text-4xl font-bold text-center">
+    <span class="lang-sv">Schema</span>
+    <span class="lang-en hidden">Schedule</span>
+  </h2>
+  <ul class="mt-6 space-y-4 text-center text-lg">
+    <li>
+      <span class="lang-sv">Ceremoni – 14:00</span>
+      <span class="lang-en hidden">Ceremony – 2:00 PM</span>
+    </li>
+    <li>
+      <span class="lang-sv">Middag – 17:00</span>
+      <span class="lang-en hidden">Dinner – 5:00 PM</span>
+    </li>
+    <li>
+      <span class="lang-sv">Fest – 21:00</span>
+      <span class="lang-en hidden">Party – 9:00 PM</span>
+    </li>
+  </ul>
+        </section>
+
+        <!-- Dress Code -->
+        <section id="dresscode" class="p-10 scroll-mt-20">
+              <h2 class="text-4xl font-bold text-center">
+   	 <span class="lang-sv">Klädkod</span>
+   	 <span class="lang-en hidden">Dress Code</span>
+  	</h2>
+  	<p class="mt-6 text-lg max-w-2xl mx-auto text-center">
+    	<span class="lang-sv">
+		För herrar en hel kostym dvs. byxor som matchar kavajen. Kan vara mörk eller ljus med skorta tillsammans med slips eller fluga i valfri färg. För damer strax över knälång klänning eller längre, slits ovanför knäna går bra. Går bra med mönster eller helfärgad. Bara eller täckta axlar går bra, men kan vara tips att ta med en sjal eller kofta då det kan vara kallt i kyrkan.                
+   		</span>
+    	<span class="lang-en hidden">
+		Translate ObsOBSobs
+	     </span>
+	    </p>
+        </section>
+
+
+        <!-- Gifts -->
+        <section id="gifts" class="p-10 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center">Gåvor</h2>
+            <p class="mt-6 text-lg max-w-2xl mx-auto text-center">
+		Den finaste gåvan är att fira vår dag tillsammans med er! Om ni ändå känner att ni vill ha med något uppskattar vi ett bidrag till vår bröllopsresa. 
+            </p>
         </section>
 
         <!-- Direction -->
-<section id="direction" class="p-10 text-center bg-gray-100">
-    <h2 class="text-3xl font-bold">Find Us Here</h2>
-<div class="flex justify-center">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d86508.17119500462!2d13.148566639718126!3d55.766556366800046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x4653940587b69819%3A0x4918e3335996d1be!2sV%C3%A4stra%20Sallerups%20kyrka%2C%20V%C3%A4stra%20Sallerups%20Byav%C3%A4g%2015%2C%20241%2036%20Esl%C3%B6v!3m2!1d55.829739499999995!2d13.2773174!4m5!1s0x465396e452ed7789%3A0xd32b433cff8a4968!2sLunds%20Akademiska%20GK%2C%20Kungsmarken%2C%20Lund!3m2!1d55.7127093!2d13.2758076!5e1!3m2!1ssv!2sse!4v1739304834649!5m2!1ssv!2sse"                
-		class="w-full md:w-2/3 h-96 mt-4" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy">
-        </iframe>
-</div>
-</section>
+        <section id="direction" class="p-10 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center">Location</h2>
+            <div class="flex justify-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d86508.17119500462!2d13.148566639718126!3d55.766556366800046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x4653940587b69819%3A0x4918e3335996d1be!2sV%C3%A4stra%20Sallerups%20kyrka%2C%20V%C3%A4stra%20Sallerups%20Byav%C3%A4g%2015%2C%20241%2036%20Esl%C3%B6v!3m2!1d55.829739499999995!2d13.2773174!4m5!1s0x465396e452ed7789%3A0xd32b433cff8a4968!2sLunds%20Akademiska%20GK%2C%20Kungsmarken%2C%20Lund!3m2!1d55.7127093!2d13.2758076!5e1!3m2!1ssv!2sse!4v1739304834649!5m2!1ssv!2sse" class="w-full md:w-2/3 h-96 mt-4 border-2 border-white" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
 
-	<!-- Upload photos -->
-	<section id="photo-album" class="text-center p-10 bg-white">
-    <h2 class="text-3xl font-bold">📸 Upload Your Wedding Photos</h2>
-    <p class="mt-4 text-lg">Click below to upload your pictures.</p>
-    <a href="https://drive.google.com/drive/folders/1G_9zCScTkr069P5wEEP1-oinQWEcY_Ip?usp=sharing" class="mt-6 bg-pink-500 text-white px-6 py-2 rounded inline-block">
-        Upload Now 📤
-    </a>
-</section>
+<!-- 
+To be added later
+	Photo Upload
+        <section id="photo-album" class="text-center p-10 scroll-mt-20">
+            <h2 class="text-4xl font-bold">Upload Your Wedding Photos</h2>
+            <p class="mt-4 text-lg">Click below to upload your pictures.</p>
+            <a href="https://drive.google.com/drive/folders/1G_9zCScTkr069P5wEEP1-oinQWEcY_Ip?usp=sharing" class="mt-6 bg-yellow-500 text-white px-6 py-2 rounded inline-block">
+                Upload Now
+            </a>
+        </section>
+//-->
 
         <!-- FAQs -->
-        <h2 class="text-3xl font-bold text-center mt-10">FAQs</h2>
-        <section id="faqs" class="p-10 text-center bg-white">
-            <details class="mt-4 border p-4 rounded">
-                <summary class="font-semibold">Can I bring a plus-one?</summary>
-                <p class="mt-2">Yes! Just let us know in the RSVP.</p>
-            </details>
-            <details class="mt-4 border p-4 rounded">
-                <summary class="font-semibold">What should I wear?</summary>
-                <p class="mt-2">Cocktail attire is recommended.</p>
-            </details>
-        </section>
-    </div>
+<section id="faqs" class="p-10 scroll-mt-20">
+  <h2 class="text-4xl font-bold text-center">
+    <span class="lang-sv">Vanliga Frågor</span>
+    <span class="lang-en hidden">FAQs</span>
+  </h2>
+  <details class="mt-4 border border-white p-4 rounded">
+    <summary class="font-semibold text-lg">
+      <span class="lang-sv">Får jag ta med en plus one?</span>
+      <span class="lang-en hidden">Can I bring a plus-one?</span>
+    </summary>
+    <p class="mt-2">
+      <span class="lang-sv">Ja! Meddela oss gärna i OSA-formuläret.</span>
+      <span class="lang-en hidden">Yes! Just let us know in the RSVP.</span>
+    </p>
+  </details>
+  <details class="mt-4 border border-white p-4 rounded">
+    <summary class="font-semibold text-lg">
+      <span class="lang-sv">Vad ska jag ha på mig?</span>
+      <span class="lang-en hidden">What should I wear?</span>
+    </summary>
+    <p class="mt-2">
+      <span class="lang-sv">Kavaj är klädkoden. Mer info hittar du ovan.</span>
+      <span class="lang-en hidden">“Kavaj” is the dress code. See above for more info.</span>
+    </p>
+  </details>
+</section>
 
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const weddingDate = new Date('August 23, 2025 15:00:00').getTime();
-            const now = new Date().getTime();
-            const timeLeft = weddingDate - now;
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            document.getElementById("countdown").innerText = `${days} days to go!`;
-        }
-        setInterval(updateCountdown, 1000);
+    // Countdown Timer with Translation Support
+    function updateCountdown() {
+        const weddingDate = new Date('August 23, 2025 15:00:00').getTime();
+        const now = new Date().getTime();
+        const timeLeft = weddingDate - now;
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+
+        const countdownText = currentLang === 'sv' ? `${days} dagar kvar!` : `${days} days to go!`;
+        document.getElementById("countdown").innerText = countdownText;
+    }
+    setInterval(updateCountdown, 1000);
     </script>
-<script>
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("slide");
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
 
-    function showSlides() {
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none"; // Hide all slides
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].classList.add("active");
+
+            setTimeout(showSlides, 4000);
         }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; } // Loop back to first slide
-        slides[slideIndex - 1].style.display = "block"; // Show the current slide
-        setTimeout(showSlides, 3000); // Change image every 3 seconds
-    }
 
-    function changeSlide(n) {
-        slideIndex += n - 1;
-        if (slideIndex < 0) { slideIndex = slides.length - 1; }
-        if (slideIndex >= slides.length) { slideIndex = 0; }
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none"; // Hide all slides
+        function changeSlide(n) {
+            slideIndex += n - 1;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+            if (slideIndex >= slides.length) slideIndex = 0;
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slides[slideIndex].classList.add("active");
         }
-        slides[slideIndex].style.display = "block"; // Show new slide
-    }
 
-    document.addEventListener("DOMContentLoaded", showSlides);
-</script>
+        document.addEventListener("DOMContentLoaded", showSlides);
+
+	
+    let currentLang = 'sv';
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'sv' ? 'en' : 'sv';
+        const svElems = document.querySelectorAll('.lang-sv');
+        const enElems = document.querySelectorAll('.lang-en');
+
+        svElems.forEach(el => el.classList.toggle('hidden', currentLang !== 'sv'));
+        enElems.forEach(el => el.classList.toggle('hidden', currentLang !== 'en'));
+
+        updateCountdown(); // Update countdown after language toggle
+    }
+    </script>
 </body>
 </html>
