@@ -45,22 +45,39 @@
             to { opacity: 1; }
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-            .slideshow-wrapper {
-                height: 14rem;
-            }
-            .text-xl {
-                font-size: 1rem;
-            }
-            .text-2xl {
-                font-size: 1.25rem;
-            }
+	@media (max-width: 768px) {
+ 		body, section, .p-10 {
+    		padding: 1rem !important;
+  	}
+
+  	.pt-20 {
+    	padding-top: 4rem !important; /* adjust based on nav height */
+  	}
+
+  	h1 {
+    	font-size: 1.75rem;
+  	}
+
+ 	h2 {
+  	font-size: 1.25rem;
+  	}
+
+  	.text-xl {
+    	font-size: 1rem;
+  	}
+
+  	.text-2xl {
+    	font-size: 1.25rem;
+  	}
+
+  	.h-64 {
+    	height: 12rem;
+  	}
+
+  	.h-96 {
+    	height: 16rem;
+  	}
+	}
         }
     </style>
     <meta charset="UTF-8">
