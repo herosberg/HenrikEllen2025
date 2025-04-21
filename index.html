@@ -51,16 +51,42 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-green-900 text-white">
-    <!-- Navigation -->
-    <nav class="bg-green-900 text-white p-4 text-center fixed w-full top-0 z-50">
-        <a href="#home" class="px-4">Home</a>
-        <a href="#details" class="px-4">Schedule</a>
-        <a href="#dresscode" class="px-4">Dress Code</a>
-	<a href="#gifts" class="px-4">Gåvor</a>
-        <a href="#direction" class="px-4">Location</a>
-        <a href="#faqs" class="px-4">FAQs</a>
- 	<button onclick="toggleLanguage()" class="px-4 underline">SE / ENG</button>
-    </nav>
+<!-- Navigation -->
+<nav class="bg-green-900 text-white p-4 text-center fixed w-full top-0 z-50">
+    <a href="#home" class="px-4">
+        <span class="lang-sv">Hem</span>
+        <span class="lang-en hidden">Home</span>
+    </a>
+    <a href="#details" class="px-4">
+        <span class="lang-sv">Schema</span>
+        <span class="lang-en hidden">Schedule</span>
+    </a>
+    <a href="#dresscode" class="px-4">
+        <span class="lang-sv">Klädkod</span>
+        <span class="lang-en hidden">Dress Code</span>
+    </a>
+    <a href="#transport" class="px-4">
+        <span class="lang-sv">Transport</span>
+        <span class="lang-en hidden">Transport</span>
+    </a>
+    <a href="#speach" class="px-4">
+        <span class="lang-sv">Tal</span>
+        <span class="lang-en hidden">Speeches</span>
+    </a>
+    <a href="#gifts" class="px-4">
+        <span class="lang-sv">Gåvor</span>
+        <span class="lang-en hidden">Gifts</span>
+    </a>
+    <a href="#direction" class="px-4">
+        <span class="lang-sv">Plats</span>
+        <span class="lang-en hidden">Location</span>
+    </a>
+    <a href="#faqs" class="px-4">
+        <span class="lang-sv">Frågor</span>
+        <span class="lang-en hidden">FAQs</span>
+    </a>
+    <button onclick="toggleLanguage()" class="px-4 underline">SE / ENG</button>
+</nav>
 
     <div class="pt-20">
         <!-- Homepage -->
@@ -73,6 +99,11 @@
              <p class="text-xl mb-6">
     		<span class="lang-sv">Välkommen att fira vår stora dag den <strong>23 augusti 2025</strong>!</span>
     		<span class="lang-en hidden">Join us on <strong>August 23, 2025</strong> to celebrate our big day!</span>
+ 	     </p>
+		
+	     <p class="text-s mb-6">
+    		<span class="lang-sv">(Hemsidan uppdateras kontinuerligt)</span>
+    		<span class="lang-en hidden">(Website will be updated continuously)</span>
  	     </p>
 
             <!-- Slideshow Container -->
@@ -109,32 +140,49 @@
   <!-- Countdown -->
   <div class="mt-6 text-2xl font-semibold" id="countdown"></div>
 
+  	<p class="mt-6 text-lg max-w-2xl mx-auto text-center">
+    	<span class="lang-sv">
+		OSA senast 13 Juli.		
+		</span>
+    	<span class="lang-en hidden">
+		RSVP before 13th of July.
+	     </span>
+	    </p>
+
   <!-- RSVP Button -->
   <a href="https://docs.google.com/forms/d/e/1FAIpQLScFnDVhzGrYM8oAbS7Bu2I8IdpYnREhyfy0zrO3EpPIxzB8Nw/viewform?usp=sharing" target="_blank">
     <button class="mt-6 bg-yellow-600 text-white px-6 py-2 rounded">
       <span class="lang-sv">OSA här</span>
-      <span class="lang-en hidden">RSVP here</span>
+      <span class="lang-en hidden">RSVP here before 13th July</span>
     </button>
   </a>
 
         <!-- Details -->
         <section id="details" class="p-10 scroll-mt-20">
               <h2 class="text-4xl font-bold text-center">
-    <span class="lang-sv">Schema</span>
-    <span class="lang-en hidden">Schedule</span>
+    <span class="lang-sv">Hålltider</span>
+    <span class="lang-en hidden">Timeline</span>
   </h2>
   <ul class="mt-6 space-y-4 text-center text-lg">
     <li>
-      <span class="lang-sv">Ceremoni – 14:00</span>
-      <span class="lang-en hidden">Ceremony – 2:00 PM</span>
+      <span class="lang-sv">Ceremoni- Västra Sallerupskyrka – 14:00</span>
+      <span class="lang-en hidden">Ceremony - Västra Sallerupskyrka – 2:00 PM</span>
     </li>
     <li>
-      <span class="lang-sv">Middag – 17:00</span>
-      <span class="lang-en hidden">Dinner – 5:00 PM</span>
+      <span class="lang-sv">Mingel - Lunds Akademsika golfklubb – 16:30</span>
+      <span class="lang-en hidden">Reception - Lunds Akademsika golf club – 4:30 PM</span>
     </li>
     <li>
-      <span class="lang-sv">Fest – 21:00</span>
-      <span class="lang-en hidden">Party – 9:00 PM</span>
+      <span class="lang-sv">Middagen börjar – 17:30</span>
+      <span class="lang-en hidden">Dinner starts – 5:30 PM</span>
+    </li>
+    <li>
+      <span class="lang-sv">Dans – 21:00</span>
+      <span class="lang-en hidden">Dance – 9:00 PM</span>
+    </li>
+    <li>
+      <span class="lang-sv">Sista dansen – 1:00</span>
+      <span class="lang-en hidden">Last dance – 1:00 AM</span>
     </li>
   </ul>
         </section>
@@ -147,20 +195,68 @@
   	</h2>
   	<p class="mt-6 text-lg max-w-2xl mx-auto text-center">
     	<span class="lang-sv">
-		För herrar en hel kostym dvs. byxor som matchar kavajen. Kan vara mörk eller ljus med skorta tillsammans med slips eller fluga i valfri färg. För damer strax över knälång klänning eller längre, slits ovanför knäna går bra. Går bra med mönster eller helfärgad. Bara eller täckta axlar går bra, men kan vara tips att ta med en sjal eller kofta då det kan vara kallt i kyrkan.                
+		För herrar en hel kostym, kan vara mörk eller ljus kostym. För damer strax över knälång klänning eller längre alternativt byxdress.                
    		</span>
     	<span class="lang-en hidden">
-		Translate ObsOBSobs
+		For men a full suit, can be a dark or light suit. For women just above the knee-length dress or longer alternatively a pantsuit.
 	     </span>
 	    </p>
         </section>
+	
+	<!-- Buss -->
+        <section id="transport" class="p-10 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center">
+   	 	<span class="lang-sv">Transport/"Partybuss"</span>
+   	 	<span class="lang-en hidden">Transport/ "Party bus"</span>
+	    </h2>
+            <p class="mt-6 text-lg max-w-2xl mx-auto text-center">
+	<span class="lang-sv">
+		Det kommer finnas möjlighet för gemensam transport mellan kyrkan och golfklubben. Om intresse finns kommer en buss att hyras in som avgår från kyrkan kl 15:30 och tar en extra tur med musik och bubbel! Anmäl er i OSA formuläret men kommer tyvärr ha begränsat antal platser (40st) så först till kvarn gäller! Vi kommer givetsvis åka med i bussen!<P>
+		För transport hem från golfklubben får man ordna själv, men man kan ställa bilen där över natten ?????
+	</span>
+	<span class="lang-en hidden">
+		WTF is a party buss?	
+	</span>
+            </p>
+        </section>	
 
+	<!-- Speach -->
+        <section id="speach" class="p-10 scroll-mt-20">
+            <h2 class="text-4xl font-bold text-center">
+   	 	<span class="lang-sv">Tal</span>
+   	 	<span class="lang-en hidden">Speach</span>
+	    </h2>
+            <p class="mt-6 text-lg max-w-2xl mx-auto text-center">
+	<span class="lang-sv">
+		Vill du hålla tal eller uppträdande så kontakta någon av våra Toast masters: <BR>
+		Nadja: 98nad01@gmail.com <BR>
+		Max: maxgustafson97@gmail.com 		
+	</span>
+	<span class="lang-en hidden">
+		Do you want to make a speach please contact on of our Toast masters: <BR>
+		Nadja: 98nad01@gmail.com <BR>		
+		Max: maxgustafson97@gmail.com 	
+	</span>
+            </p>
+        </section>	
 
         <!-- Gifts -->
         <section id="gifts" class="p-10 scroll-mt-20">
-            <h2 class="text-4xl font-bold text-center">Gåvor</h2>
+            <h2 class="text-4xl font-bold text-center">
+		<span class="lang-sv">Gåvor</span>
+   	 	<span class="lang-en hidden">Registry</span>
+	    </h2>
             <p class="mt-6 text-lg max-w-2xl mx-auto text-center">
-		Den finaste gåvan är att fira vår dag tillsammans med er! Om ni ändå känner att ni vill ha med något uppskattar vi ett bidrag till vår bröllopsresa. 
+	<span class="lang-sv">
+		Den finaste gåvan är att fira vår dag tillsammans med er! Om ni ändå känner att ni vill ha med något uppskattar vi ett bidrag till vår bröllopsresa. <BR>
+		<b> Swish: </b> +46733995752 <BR>
+		<b> Kontonummer (inklusive clearingnummer: </b> 5606 00 620 59 (SEB)		
+	</span>
+	<span class="lang-en hidden">
+		The best gift is to celebrate our day with you! If you still feel like you want to bring something, we would appreciate a contribution to our honeymoon. <BR>
+		<b> Swish: </b> +46733995752 <BR>
+		<b> Kontonummer (inklusive clearingnummer: </b> 5606 00 620 59 (SEB)	
+	</span>
             </p>
         </section>
 
@@ -206,10 +302,44 @@ To be added later
       <span class="lang-en hidden">What should I wear?</span>
     </summary>
     <p class="mt-2">
-      <span class="lang-sv">Kavaj är klädkoden. Mer info hittar du ovan.</span>
-      <span class="lang-en hidden">“Kavaj” is the dress code. See above for more info.</span>
+      <span class="lang-sv">Kostym är klädkoden. Mer info hittar du ovan.</span>
+      <span class="lang-en hidden">“Semi formal” is the dress code. See above for more info.</span>
     </p>
   </details>
+
+  <details class="mt-4 border border-white p-4 rounded">
+    <summary class="font-semibold text-lg">
+      <span class="lang-sv">Kan man ta sig med kollektivtrafik till kyrkan?</span>
+      <span class="lang-en hidden">Can you use public transportation to get to the church?</span>
+    </summary>
+    <p class="mt-2">
+      <span class="lang-sv">Ja! Ta tåget till Eslöv station och sedan buss nr 2 mot Bäckdala till hållplatsen "Eslöv Sallerup" (tar ca 5min). Därefter är det en promenad på ca 600m upp till kyrkan.</span>
+      <span class="lang-en hidden">Yes! Take the train to "Eslöv Station" and after that take bus nr 2 towards Bäckdala and jump of at the bus stop "Eslöv Sallerup" (takes about 5min). After that there is a 0,36 mile walk to the church.</span>
+    </p>
+  </details>
+
+  <details class="mt-4 border border-white p-4 rounded">
+    <summary class="font-semibold text-lg">
+      <span class="lang-sv">Får jag ta med mitt barn till bröllopet?</span>
+      <span class="lang-en hidden">Can I bring my child to the wedding?</span>
+    </summary>
+    <p class="mt-2">
+      <span class="lang-sv">Ja! Men skriv det gärna tydligt i OSA formuläret och skriv gärna om det behövs en barnstol till barnet.</span>
+      <span class="lang-en hidden">Yes! But please write it clearly in the RSVP form and please let us know in the form if your child needs a highchair.</span>
+    </p>
+  </details>
+
+  <details class="mt-4 border border-white p-4 rounded">
+    <summary class="font-semibold text-lg">
+      <span class="lang-sv">Får man fotografera i kyrkan?</span>
+      <span class="lang-en hidden">Can I takes photos during the ceremony?</span>
+    </summary>
+    <p class="mt-2">
+      <span class="lang-sv">Vi önskar att ha en mobilfri ceremoni dvs. det kommer finnas tillfälle att ta bild när prästen säger till men annars önskar vi att mobilen är undanstoppad. Efter ceremonin och under festen går det givetvis bra att ta bilder.</span>
+      <span class="lang-en hidden">We wish to have an unplugged ceremony. There will be a chance to take photos when the priest says so but otherwise our wish is that the phones will be stowed away. After the ceremony and during the party you can of course take pictures.</span>
+    </p>
+  </details>
+
 </section>
 
     <script>
